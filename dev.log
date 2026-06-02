@@ -1,0 +1,85 @@
+
+> creator-toolkit@0.1.0 dev
+> next dev
+
+⚠ Port 3000 is in use by process 17780, using available port 3001 instead.
+▲ Next.js 16.2.7 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://10.10.145.244:3001
+- Environments: .env.local
+✓ Ready in 512ms
+
+ GET / 200 in 1956ms (next.js: 1627ms, application-code: 329ms)
+ GET /generator 200 in 316ms (next.js: 293ms, application-code: 23ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /pricing 200 in 286ms (next.js: 232ms, application-code: 53ms)
+ GET /generator 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /pricing 200 in 50ms (next.js: 3ms, application-code: 47ms)
+ GET /generator 200 in 19ms (next.js: 3ms, application-code: 16ms)
+Error: 401 {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011CbeEjk8tDskC1Zm9oc8w7"}
+    at async POST (app\api\generate\route.ts:60:22)
+  58 | }`;
+  59 |
+> 60 |     const response = await client.messages.create({
+     |                      ^
+  61 |       model: "claude-opus-4-8",
+  62 |       max_tokens: 4096,
+  63 |       messages: [{ role: "user", content: prompt }], {
+  status: 401,
+  headers: Headers {
+    date: 'Tue, 02 Jun 2026 09:59:42 GMT',
+    'content-type': 'application/json',
+    'transfer-encoding': 'chunked',
+    connection: 'keep-alive',
+    'x-should-retry': 'false',
+    'request-id': 'req_011CbeEjk8tDskC1Zm9oc8w7',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    server: 'cloudflare',
+    'content-encoding': 'gzip',
+    vary: 'Accept-Encoding',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '_cfuvid=0T9XlmatBjleqAaPQriklZTCQRpIg0_hM8CruYNE5As-1780394382.231716-1.0.1.1-5FVqW8APB3IZqzbC8HqSBJ3t9Dagevrr_tOk9oFQriE; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.anthropic.com',
+    'content-security-policy': "default-src 'none'; frame-ancestors 'none'",
+    'x-robots-tag': 'none',
+    'cf-ray': 'a0559b58ffc8fd20-SIN'
+  },
+  requestID: 'req_011CbeEjk8tDskC1Zm9oc8w7',
+  error: {
+    type: 'error',
+    error: { type: 'authentication_error', message: 'invalid x-api-key' },
+    request_id: 'req_011CbeEjk8tDskC1Zm9oc8w7'
+  },
+  type: 'authentication_error'
+}
+ POST /api/generate 500 in 1011ms (next.js: 433ms, application-code: 577ms)
+ GET / 200 in 46ms (next.js: 4ms, application-code: 42ms)
+ GET / 200 in 9ms (next.js: 3ms, application-code: 6ms)
+ GET / 200 in 40ms (next.js: 3ms, application-code: 37ms)
+ GET / 200 in 209ms (next.js: 57ms, application-code: 153ms)
+ GET / 200 in 96ms (next.js: 3ms, application-code: 93ms)
+ GET / 200 in 42ms (next.js: 3ms, application-code: 39ms)
+ GET / 200 in 257ms (next.js: 94ms, application-code: 163ms)
+ GET / 200 in 89ms (next.js: 4ms, application-code: 85ms)
+✓ Compiled in 65ms
+ GET / 200 in 339ms (next.js: 74ms, application-code: 264ms)
+ GET / 200 in 208ms (next.js: 3ms, application-code: 206ms)
+ GET / 200 in 142ms (next.js: 5ms, application-code: 137ms)
+ GET / 200 in 141ms (next.js: 83ms, application-code: 58ms)
+ GET / 200 in 143ms (next.js: 48ms, application-code: 94ms)
+✓ Compiled in 29ms
+ GET / 200 in 133ms (next.js: 65ms, application-code: 68ms)
+✓ Compiled in 32ms
+ GET / 200 in 122ms (next.js: 65ms, application-code: 58ms)
+✓ Compiled in 25ms
+ GET / 200 in 114ms (next.js: 59ms, application-code: 55ms)
+✓ Compiled in 24ms
+ GET / 200 in 111ms (next.js: 59ms, application-code: 53ms)
+✓ Compiled in 35ms
+ GET / 200 in 129ms (next.js: 68ms, application-code: 61ms)
+✓ Compiled in 40ms
+✓ Compiled in 26ms
+ GET / 200 in 106ms (next.js: 53ms, application-code: 53ms)
+✓ Compiled in 23ms
+ GET / 200 in 103ms (next.js: 55ms, application-code: 48ms)
+✓ Compiled in 23ms
+ GET / 200 in 101ms (next.js: 51ms, application-code: 50ms)

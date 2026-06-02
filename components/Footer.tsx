@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div style={{ borderTop: "1px solid #1e1e35" }} className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-sm">© 2024 CreatorToolkit. All rights reserved.</p>
+          <p className="text-gray-600 text-sm">© 2026 CreatorToolkit. All rights reserved.</p>
           <p className="text-gray-600 text-sm">Built for creators. Powered by AI.</p>
         </div>
       </div>

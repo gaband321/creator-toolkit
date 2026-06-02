@@ -8,6 +8,7 @@ type Results = {
   hooks: string[];
   titles: string[];
   thumbnailTexts: string[];
+  demo?: boolean;
 };
 
 type Tab = "hooks" | "titles" | "thumbnailTexts";
@@ -16,20 +17,18 @@ const platforms = ["YouTube", "TikTok", "Shorts"] as const;
 type Platform = (typeof platforms)[number];
 
 const niches = [
-  "Finance & Investing",
-  "Fitness & Health",
-  "Gaming",
-  "Technology",
-  "Cooking & Food",
-  "Beauty & Fashion",
-  "Travel & Lifestyle",
-  "Education & Learning",
-  "Business & Entrepreneurship",
-  "Personal Development",
-  "Entertainment",
-  "Sports",
-  "Science & Nature",
-  "DIY & Crafts",
+  "Gaming (General)",
+  "FPS / Shooter Games",
+  "RPG & Adventure Games",
+  "Battle Royale",
+  "Mobile Games",
+  "Strategy & Simulation",
+  "Indie Games",
+  "Game Reviews & Opinions",
+  "Speedrunning",
+  "Game Lore & Story",
+  "Retro & Classic Games",
+  "Game Tier Lists & Rankings",
   "Other",
 ];
 
@@ -92,7 +91,7 @@ function LoadingSkeleton() {
 
 export default function GeneratorPage() {
   const [topic, setTopic] = useState("");
-  const [niche, setNiche] = useState(niches[0]);
+  const [niche, setNiche] = useState("Gaming (General)");
   const [platform, setPlatform] = useState<Platform>("YouTube");
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<Results | null>(null);
@@ -150,12 +149,11 @@ export default function GeneratorPage() {
               className="text-4xl md:text-5xl font-extrabold text-white mb-3"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Generate{" "}
-              <span className="gradient-text">60 Viral Ideas</span>{" "}
-              Instantly
+              Viral Hook{" "}
+              <span className="gradient-text">Generator</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-xl">
-              Enter your video topic, choose your platform, and get 20 hooks, 20 titles, and 20 thumbnail texts in seconds.
+              Enter your gaming video topic, pick your platform, and get 20 hooks, 20 titles, and 20 thumbnail texts — instantly. No account needed.
             </p>
           </div>
         </div>
@@ -187,7 +185,7 @@ export default function GeneratorPage() {
                   <textarea
                     value={topic}
                     onChange={(e) => setTopic(e.target.value)}
-                    placeholder="e.g. How I saved ฿500,000 in 2 years on a teacher's salary"
+                    placeholder="e.g. Best loadout in Warzone Season 4, or How I ranked up to Diamond in Valorant"
                     rows={3}
                     className="input-dark w-full rounded-xl px-4 py-3 text-sm resize-none"
                   />
@@ -275,7 +273,7 @@ export default function GeneratorPage() {
 
                 {!results && !loading && (
                   <p className="text-center text-gray-600 text-xs mt-3">
-                    Free plan · 5 generations/day
+                    No account needed · Works instantly
                   </p>
                 )}
               </div>
@@ -367,6 +365,23 @@ export default function GeneratorPage() {
                   className="rounded-2xl overflow-hidden"
                   style={{ background: "#0f0f1a", border: "1px solid #1e1e35" }}
                 >
+                  {/* Demo mode banner */}
+                  {results.demo && (
+                    <div
+                      className="px-6 py-3 flex items-center gap-2 text-xs"
+                      style={{
+                        background: "rgba(245,158,11,0.08)",
+                        borderBottom: "1px solid rgba(245,158,11,0.2)",
+                      }}
+                    >
+                      <svg className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                      </svg>
+                      <span className="text-amber-400 font-medium">Demo mode</span>
+                      <span className="text-amber-600">— results are template-based. Add an API key for AI-generated ideas.</span>
+                    </div>
+                  )}
+
                   {/* Header */}
                   <div
                     className="px-6 py-4 flex items-center justify-between"
@@ -474,9 +489,9 @@ export default function GeneratorPage() {
           {!results && !loading && (
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { emoji: "💡", tip: "Be specific with your topic for better results", sub: "\"How I paid off my student loans in 18 months\" beats \"money saving tips\"" },
-                { emoji: "🎯", tip: "Match your real video concept", sub: "The more accurate your input, the more usable the output hooks will be" },
-                { emoji: "✨", tip: "Use as inspiration, then customize", sub: "Take a hook you love and tweak it to fit your exact story and voice" },
+                { emoji: "💡", tip: "Be specific — not just the game, but the angle", sub: "\"How I peaked Diamond in Valorant with only Killjoy\" beats \"how to rank up in Valorant\"" },
+                { emoji: "🎯", tip: "Match it to your actual video concept", sub: "The closer your topic matches what you're recording, the more usable the hooks will be" },
+                { emoji: "✨", tip: "Treat results as starting points", sub: "Pick a hook you like, tweak it to match your exact story and voice, then record" },
               ].map((t) => (
                 <div
                   key={t.tip}

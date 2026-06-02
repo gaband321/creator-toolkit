@@ -1,7 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
-
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+import { generateDemo } from "@/lib/demo-templates";
 
 export async function POST(req: NextRequest) {
   try {
@@ -12,49 +11,48 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+
+    // Demo mode: no API key configured
+    if (!apiKey || apiKey === "your_api_key_here") {
+      const result = generateDemo(topic, platform);
+      return NextResponse.json({ ...result, demo: true });
+    }
+
+    // AI mode: real generation via Claude
+    const client = new Anthropic({ apiKey });
+
     const platformContextMap: Record<string, string> = {
-      YouTube: "YouTube (long-form videos, 8-20 minutes). Viewers are in discovery mode, searching or browsing. Hooks need to establish credibility and promise value quickly.",
-      TikTok: "TikTok (15-60 second videos). Extremely competitive, users scroll fast. First 2 seconds are critical. Hooks must be shocking, relatable, or emotionally charged.",
-      Shorts: "YouTube Shorts (under 60 seconds). Similar to TikTok but slightly more educational. Hook + quick payoff works best.",
+      YouTube: "YouTube long-form (8-20 min). Hook must establish credibility and promise value in the first sentence.",
+      TikTok: "TikTok (15-60 sec). Extremely competitive — first 2 seconds are everything. Hook must be immediate and visceral.",
+      Shorts: "YouTube Shorts (under 60 sec). Hook + payoff in one tight package. Direct and punchy.",
     };
     const platformContext = platformContextMap[platform] || platform;
 
-    const prompt = `You are an expert viral content strategist who has studied millions of viral videos on ${platform}.
+    const prompt = `You are a viral content strategist specializing in ${niche} content for ${platform}.
 
 Generate exactly 20 viral hooks, 20 video titles, and 20 thumbnail text ideas for:
 - Topic: ${topic}
 - Niche: ${niche}
 - Platform: ${platformContext}
 
-Hook guidelines: Hooks are the FIRST LINE spoken or shown in a video. They must stop the scroll in 2-3 seconds. Use these proven formulas:
-- Shocking stat or fact
-- Counterintuitive statement
-- Personal failure or mistake story
-- Bold controversial claim
-- "I wish someone told me..."
-- Specific number + promise
+Hook guidelines (first line spoken/shown — must stop the scroll in 2 seconds):
+- Personal failure or discovery story
+- Counterintuitive or surprising claim
+- Specific number + concrete promise
+- Question that creates a curiosity gap
+- Statement that challenges a common belief
 - Story that starts mid-action
-- Question that creates curiosity gap
 
-Title guidelines: Click-worthy but not clickbait. Must deliver on the promise. Use power words, numbers, urgency.
+Title guidelines: Click-worthy, specific, delivers on the promise. Use numbers, strong adjectives, clear benefit.
 
-Thumbnail text guidelines: Max 3-6 words. Big, bold, emotional. What would stop YOU from scrolling?
+Thumbnail text guidelines: 2-5 words max. Emotionally charged. Would YOU stop scrolling?
 
-Return ONLY valid JSON, no markdown, no explanation:
+Return ONLY valid JSON, no markdown:
 {
-  "hooks": [
-    "hook 1",
-    "hook 2",
-    ...20 total
-  ],
-  "titles": [
-    "title 1",
-    ...20 total
-  ],
-  "thumbnailTexts": [
-    "text 1",
-    ...20 total
-  ]
+  "hooks": ["hook 1", "hook 2", ...20 total],
+  "titles": ["title 1", ...20 total],
+  "thumbnailTexts": ["text 1", ...20 total]
 }`;
 
     const response = await client.messages.create({
@@ -71,14 +69,14 @@ Return ONLY valid JSON, no markdown, no explanation:
     } catch {
       const match = text.match(/\{[\s\S]*\}/);
       if (match) result = JSON.parse(match[0]);
-      else throw new Error("Invalid JSON response");
+      else throw new Error("Invalid JSON response from AI");
     }
 
     if (!result.hooks || !result.titles || !result.thumbnailTexts) {
-      throw new Error("Incomplete response structure");
+      throw new Error("Incomplete AI response");
     }
 
-    return NextResponse.json(result);
+    return NextResponse.json({ ...result, demo: false });
   } catch (err) {
     console.error(err);
     return NextResponse.json({ error: "Generation failed. Please try again." }, { status: 500 });

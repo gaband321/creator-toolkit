@@ -5,112 +5,98 @@ import Footer from "@/components/Footer";
 const features = [
   {
     icon: "⚡",
-    title: "20 Hooks in Seconds",
-    desc: "Generate scroll-stopping opening lines tailored to your exact topic and platform algorithm.",
+    title: "20 Hooks Per Generate",
+    desc: "Scroll-stopping opening lines built from proven viral formulas — tuned for your exact topic and platform.",
   },
   {
     icon: "🎯",
-    title: "Click-Worthy Titles",
-    desc: "Get 20 video titles engineered for high CTR, using proven formulas from viral creators.",
+    title: "20 Video Titles",
+    desc: "Click-worthy titles that tell viewers exactly what they'll get. Specific beats generic every time.",
   },
   {
     icon: "🖼️",
-    title: "Thumbnail Text Ideas",
-    desc: "Short, punchy text overlays that make viewers stop mid-scroll and click your video.",
+    title: "20 Thumbnail Texts",
+    desc: "2-5 word overlays that make your thumbnail impossible to scroll past. Short, bold, and emotional.",
   },
   {
     icon: "📱",
-    title: "Platform-Optimized",
-    desc: "Each output is specifically tuned for YouTube, TikTok, or Shorts — not generic copy.",
+    title: "Platform-Specific",
+    desc: "YouTube, TikTok, and Shorts all have different patterns. The output is tuned for whichever you pick.",
   },
   {
-    icon: "🧠",
-    title: "Niche Intelligence",
-    desc: "The AI understands your niche context and generates ideas that resonate with your audience.",
+    icon: "🎮",
+    title: "Built for Gaming",
+    desc: "Hooks and titles that speak the language of gaming audiences — not generic creator advice repackaged.",
   },
   {
     icon: "📋",
     title: "One-Click Copy",
-    desc: "Copy any hook, title, or thumbnail text with one click. Ready to use instantly.",
+    desc: "Copy any individual idea or the full list with one click. Paste directly into your workflow.",
   },
 ];
 
 const steps = [
   {
     num: "01",
-    title: "Enter Your Topic",
-    desc: "Type what your video is about. Be as specific or broad as you want — the AI adapts.",
+    title: "Describe Your Video",
+    desc: "Type what your video is actually about. The more specific, the better the output.",
   },
   {
     num: "02",
-    title: "Choose Your Platform",
-    desc: "Select YouTube, TikTok, or Shorts. Each platform has different viral patterns.",
+    title: "Pick Your Platform",
+    desc: "YouTube, TikTok, or Shorts. Each one needs a different hook style — we handle that.",
   },
   {
     num: "03",
-    title: "Get 60 Ideas Instantly",
-    desc: "20 hooks + 20 titles + 20 thumbnail texts. Pick the best, use it, go viral.",
+    title: "Get 60 Ideas",
+    desc: "20 hooks + 20 titles + 20 thumbnail texts. Pick the ones that fit, tweak them, and go.",
   },
 ];
 
-const stats = [
-  { value: "50,000+", label: "Active Creators" },
-  { value: "2.4M+", label: "Hooks Generated" },
-  { value: "4.9/5", label: "Creator Rating" },
-  { value: "47%", label: "Avg CTR Increase" },
+// Honest example output — these are actual template outputs for this topic
+const exampleTopic = "How I ranked up to Diamond in Valorant";
+const exampleHooks = [
+  "I spent 100 hours on ranking up to Diamond in Valorant and here's what I actually learned",
+  "Nobody is talking about this ranking up to Diamond strategy — and it\'s completely broken",
+  "Stop doing ranking up to Diamond like this. Seriously.",
+  "The ranking up to Diamond mistake I see every new player make (and how to fix it)",
 ];
-
-const testimonials = [
-  {
-    name: "Jayden Krauss",
-    role: "Gaming YouTuber · 184K subscribers",
-    avatar: "JK",
-    quote:
-      "I went from 50K to 184K subscribers in 8 months. The hook generator changed how I open every single video. My audience retention went through the roof.",
-    stars: 5,
-  },
-  {
-    name: "Mink Siriphong",
-    role: "TikTok Creator · 2.3M followers",
-    avatar: "MS",
-    quote:
-      "I used to spend 2 hours just brainstorming hooks. Now I generate 20 in seconds and pick the best one. The platform-specific tuning is insanely good.",
-    stars: 5,
-  },
-  {
-    name: "Aom Pakcharoen",
-    role: "Shorts Creator · 890K subscribers",
-    avatar: "AP",
-    quote:
-      "The thumbnail text ideas alone are worth the price. My CTR went from 3.2% to 11.4% in one month. This tool pays for itself with one viral video.",
-    stars: 5,
-  },
+const exampleTitles = [
+  "How I Ranked Up to Diamond in Valorant: The Honest Guide Nobody Else Is Making",
+  "I Tested Every Ranking Method In Valorant — Here's The Only One That Works",
+  "Why Ranking Up In Valorant Is Harder Than Everyone Says (And How To Fix It)",
+];
+const exampleThumbnails = [
+  "FINALLY WORKS",
+  "THE TRUTH",
+  "GAME CHANGER",
+  "NEW META",
 ];
 
 const faqs = [
   {
-    q: "How many hooks can I generate per month?",
-    a: "Pro users get unlimited generations. The free plan gives you 5 generations per day to try it out. Each generation produces 20 hooks, 20 titles, and 20 thumbnail texts.",
+    q: "Does this work without an account or API key?",
+    a: "Yes. The generator has a built-in demo mode that runs instantly in your browser using content formulas — no account, no API key, no setup required. Just type your topic and click generate.",
+  },
+  {
+    q: "What's the difference between demo mode and AI mode?",
+    a: "Demo mode uses proven hook/title templates filled with your topic. AI mode uses Claude to write fully custom ideas tuned to your exact niche and context. Both are useful — demo mode is instant and free, AI mode produces more unique results.",
   },
   {
     q: "What platforms are supported?",
-    a: "We support YouTube (long-form), TikTok, and YouTube Shorts. Each platform has its own algorithm patterns, so the AI generates content specifically optimized for each one.",
+    a: "YouTube long-form, TikTok, and YouTube Shorts. Each platform has different hook and title patterns, so the output adapts based on which you pick.",
   },
   {
-    q: "Can I use it for any niche?",
-    a: "Yes — gaming, finance, fitness, cooking, tech, lifestyle, education, beauty, and more. The AI understands niche-specific language and audience psychology.",
+    q: "Is this really focused on gaming?",
+    a: "Yes — the templates, examples, and defaults are all tuned for gaming creators. The tool works for other niches too, but gaming content is the primary focus right now.",
   },
   {
-    q: "Is there a free trial?",
-    a: "Yes, you get 5 free generations per day forever — no credit card required. Upgrade to Pro when you're ready to go unlimited.",
+    q: "Do you store any of my input or results?",
+    a: "No. Your topic and generated results are never saved to any database. Each session is completely fresh.",
   },
   {
-    q: "Do you offer refunds?",
-    a: "We offer a 7-day money-back guarantee, no questions asked. If you don't see value in the first week, we'll refund you completely.",
-  },
-  {
-    q: "Will the hooks work for my niche?",
-    a: "The AI has been trained on millions of viral videos across all major niches. Input your specific topic and niche, and the output will be tailored exactly to your content.",
+    q: "What's the Pro plan for?",
+    a: "Pro unlocks AI-powered generation (using Claude), which writes fully original hooks and titles specific to your topic and niche — not templates. It's worth it once you're publishing consistently and want more unique ideas.",
   },
 ];
 
@@ -121,22 +107,15 @@ export default function LandingPage() {
 
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden dot-grid">
-        {/* Orbs */}
-        <div
-          className="orb w-96 h-96 -top-32 -left-32 opacity-30"
-          style={{ background: "#7c3aed" }}
-        />
-        <div
-          className="orb w-80 h-80 top-20 -right-20 opacity-20"
-          style={{ background: "#3b82f6" }}
-        />
+        <div className="orb w-96 h-96 -top-32 -left-32 opacity-25" style={{ background: "#7c3aed" }} />
+        <div className="orb w-80 h-80 top-20 -right-20 opacity-15" style={{ background: "#3b82f6" }} />
 
         <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-32">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             {/* Badge */}
             <div className="animate-fade-up badge inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse inline-block" />
-              AI-Powered Content Creation for Creators
+              Built for Gaming Creators on YouTube, TikTok & Shorts
             </div>
 
             {/* Headline */}
@@ -151,9 +130,11 @@ export default function LandingPage() {
 
             {/* Subhead */}
             <p className="animate-fade-up-2 text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed">
-              Generate <strong className="text-white">20 hooks</strong>, <strong className="text-white">20 titles</strong>, and{" "}
-              <strong className="text-white">20 thumbnail texts</strong> in seconds.
-              AI trained on millions of viral videos — for YouTube, TikTok, and Shorts.
+              Type your video topic. Get{" "}
+              <strong className="text-white">20 hooks</strong>,{" "}
+              <strong className="text-white">20 titles</strong>, and{" "}
+              <strong className="text-white">20 thumbnail texts</strong> — instantly.
+              No account needed to try it.
             </p>
 
             {/* CTAs */}
@@ -162,7 +143,7 @@ export default function LandingPage() {
                 href="/generator"
                 className="btn-primary text-white font-bold px-8 py-4 rounded-xl text-lg relative z-10"
               >
-                Generate Hooks for Free →
+                Try the Free Generator →
               </Link>
               <a
                 href="#how-it-works"
@@ -172,31 +153,13 @@ export default function LandingPage() {
               </a>
             </div>
 
-            {/* Social proof line */}
-            <div className="animate-fade-up-4 flex items-center gap-2 text-sm text-gray-500">
-              <div className="flex -space-x-2">
-                {["JK", "MS", "AP", "TN"].map((a) => (
-                  <div
-                    key={a}
-                    className="w-7 h-7 rounded-full border-2 flex items-center justify-center text-xs font-bold text-white"
-                    style={{ background: "linear-gradient(135deg, #7c3aed, #3b82f6)", borderColor: "#08080f" }}
-                  >
-                    {a[0]}
-                  </div>
-                ))}
-              </div>
-              <span>
-                <strong className="text-white">50,000+</strong> creators generating viral content daily
-              </span>
-            </div>
-
-            {/* Mock result preview */}
+            {/* Mock result preview — gaming examples */}
             <div
-              className="animate-fade-up-5 mt-16 w-full max-w-3xl rounded-2xl overflow-hidden"
+              className="animate-fade-up-4 w-full max-w-3xl rounded-2xl overflow-hidden"
               style={{
                 background: "#0f0f1a",
                 border: "1px solid #1e1e35",
-                boxShadow: "0 40px 100px rgba(139,92,246,0.15)",
+                boxShadow: "0 40px 100px rgba(139,92,246,0.12)",
               }}
             >
               {/* Window chrome */}
@@ -207,7 +170,9 @@ export default function LandingPage() {
                 <div className="w-3 h-3 rounded-full bg-red-500/70" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
                 <div className="w-3 h-3 rounded-full bg-green-500/70" />
-                <span className="text-gray-500 text-xs ml-2">CreatorToolkit — Viral Hook Generator</span>
+                <span className="text-gray-500 text-xs ml-2">
+                  CreatorToolkit — Topic: "best loadout in Warzone Season 4"
+                </span>
               </div>
               <div className="p-6">
                 <div className="flex gap-3 mb-4 text-xs">
@@ -222,10 +187,10 @@ export default function LandingPage() {
                 </div>
                 <div className="space-y-2.5">
                   {[
-                    "\"I lost $47,000 doing this — and then made it all back in 90 days\"",
-                    "\"The investing mistake every 25-year-old makes (and how to fix it)\"",
-                    "\"99% of traders don't know this rule exists — here's why it matters\"",
-                    "\"I asked 50 millionaires for their #1 money tip — these were the answers\"",
+                    "I tested every loadout in Warzone Season 4 so you don't have to — here's the winner",
+                    "Stop running this loadout. Seriously. Here's what actually works right now.",
+                    "The best loadout in Warzone Season 4 is completely broken — and most people don't know it",
+                    "I copied exactly how pros build their loadout in Warzone Season 4. Big mistake.",
                   ].map((hook, i) => (
                     <div
                       key={i}
@@ -234,12 +199,6 @@ export default function LandingPage() {
                       <div className="flex items-center gap-3">
                         <span className="text-purple-400 font-mono text-xs">{String(i + 1).padStart(2, "0")}</span>
                         <span className="text-gray-300 text-sm">{hook}</span>
-                      </div>
-                      <div className="copy-btn flex items-center gap-1.5 text-xs text-gray-500 whitespace-nowrap ml-3">
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
-                        </svg>
-                        Copy
                       </div>
                     </div>
                   ))}
@@ -251,44 +210,25 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ─── STATS ─── */}
-      <section style={{ background: "#0a0a14", borderTop: "1px solid #1e1e35", borderBottom: "1px solid #1e1e35" }}>
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div
-                  className="text-4xl font-extrabold mb-1 gradient-text"
-                >
-                  {s.value}
-                </div>
-                <div className="text-gray-500 text-sm">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ─── FEATURES ─── */}
       <section id="features" className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
           <div className="badge inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium mb-4">
-            Features
+            What You Get
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ letterSpacing: "-0.03em" }}>
-            Everything You Need to{" "}
-            <span className="gradient-text">Go Viral</span>
+            Three outputs.{" "}
+            <span className="gradient-text">One topic.</span>{" "}
+            Seconds.
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            One tool. Three outputs. Infinite viral potential.
+            Stop spending an hour staring at a blank page. Get 60 ideas, pick the best one, and start recording.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((f) => (
             <div key={f.title} className="card-dark rounded-2xl p-6">
-              <div
-                className="feature-icon w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
-              >
+              <div className="feature-icon w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4">
                 {f.icon}
               </div>
               <h3 className="text-white font-bold text-lg mb-2">{f.title}</h3>
@@ -311,20 +251,20 @@ export default function LandingPage() {
               How It Works
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ letterSpacing: "-0.03em" }}>
-              From Idea to Viral in{" "}
-              <span className="gradient-text">3 Steps</span>
+              From blank page to{" "}
+              <span className="gradient-text">60 ideas</span>{" "}
+              in 3 steps
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            {/* Connecting line */}
             <div
               className="hidden md:block absolute top-12 left-1/4 right-1/4 h-px"
               style={{ background: "linear-gradient(90deg, transparent, #2d2d55, transparent)" }}
             />
-            {steps.map((s, i) => (
+            {steps.map((s) => (
               <div key={s.num} className="flex flex-col items-center text-center">
                 <div
-                  className="w-24 h-24 rounded-2xl flex items-center justify-center mb-6 relative"
+                  className="w-24 h-24 rounded-2xl flex items-center justify-center mb-6"
                   style={{
                     background: "linear-gradient(135deg, rgba(124,58,237,0.2), rgba(59,130,246,0.2))",
                     border: "1px solid rgba(139,92,246,0.3)",
@@ -351,50 +291,146 @@ export default function LandingPage() {
               href="/generator"
               className="btn-primary text-white font-bold px-10 py-4 rounded-xl text-lg relative z-10 inline-block"
             >
-              Start Generating for Free
+              Try the Free Generator
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ─── */}
-      <section id="testimonials" className="max-w-7xl mx-auto px-6 py-24">
+      {/* ─── EXAMPLE OUTPUT (replaces fake testimonials) ─── */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
           <div className="badge inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium mb-4">
-            Creator Stories
+            Example Output
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ letterSpacing: "-0.03em" }}>
-            What Creators Are{" "}
-            <span className="gradient-text">Saying</span>
+            Here's what it actually{" "}
+            <span className="gradient-text">generates</span>
           </h2>
-          <p className="text-gray-400 text-lg">Real creators. Real results.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="testimonial-card rounded-2xl p-6 flex flex-col gap-4"
+          <p className="text-gray-400 text-lg max-w-xl mx-auto">
+            Topic entered:{" "}
+            <span
+              className="font-medium px-2 py-0.5 rounded-md"
+              style={{ background: "rgba(139,92,246,0.15)", color: "#a78bfa" }}
             >
-              <div className="flex gap-1">
-                {Array.from({ length: t.stars }).map((_, i) => (
-                  <span key={i} className="star text-lg">★</span>
-                ))}
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed flex-1">"{t.quote}"</p>
-              <div className="flex items-center gap-3 pt-2" style={{ borderTop: "1px solid #1e1e35" }}>
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white"
-                  style={{ background: "linear-gradient(135deg, #7c3aed, #3b82f6)" }}
-                >
-                  {t.avatar}
-                </div>
-                <div>
-                  <p className="text-white font-semibold text-sm">{t.name}</p>
-                  <p className="text-gray-500 text-xs">{t.role}</p>
-                </div>
-              </div>
+              "{exampleTopic}"
+            </span>
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          {/* Hooks */}
+          <div
+            className="rounded-2xl p-5"
+            style={{ background: "#0f0f1a", border: "1px solid #1e1e35" }}
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-xl">⚡</span>
+              <p className="text-white font-bold">Viral Hooks</p>
+              <span
+                className="ml-auto text-xs px-2 py-0.5 rounded-md font-medium"
+                style={{ background: "rgba(139,92,246,0.15)", color: "#a78bfa" }}
+              >
+                ×20
+              </span>
             </div>
-          ))}
+            <div className="space-y-2.5">
+              {exampleHooks.map((hook, i) => (
+                <div
+                  key={i}
+                  className="flex gap-2.5 px-3 py-2.5 rounded-xl"
+                  style={{ background: "rgba(139,92,246,0.05)", border: "1px solid rgba(139,92,246,0.1)" }}
+                >
+                  <span className="text-purple-400 font-mono text-xs mt-0.5 flex-shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-gray-300 text-xs leading-relaxed">{hook}</span>
+                </div>
+              ))}
+              <p className="text-center text-gray-600 text-xs pt-1">+ 16 more hooks generated</p>
+            </div>
+          </div>
+
+          {/* Titles */}
+          <div
+            className="rounded-2xl p-5"
+            style={{ background: "#0f0f1a", border: "1px solid #1e1e35" }}
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-xl">🎯</span>
+              <p className="text-white font-bold">Video Titles</p>
+              <span
+                className="ml-auto text-xs px-2 py-0.5 rounded-md font-medium"
+                style={{ background: "rgba(59,130,246,0.15)", color: "#60a5fa" }}
+              >
+                ×20
+              </span>
+            </div>
+            <div className="space-y-2.5">
+              {exampleTitles.map((title, i) => (
+                <div
+                  key={i}
+                  className="flex gap-2.5 px-3 py-2.5 rounded-xl"
+                  style={{ background: "rgba(59,130,246,0.05)", border: "1px solid rgba(59,130,246,0.1)" }}
+                >
+                  <span className="text-blue-400 font-mono text-xs mt-0.5 flex-shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-gray-300 text-xs leading-relaxed">{title}</span>
+                </div>
+              ))}
+              <p className="text-center text-gray-600 text-xs pt-1">+ 17 more titles generated</p>
+            </div>
+          </div>
+
+          {/* Thumbnails */}
+          <div
+            className="rounded-2xl p-5"
+            style={{ background: "#0f0f1a", border: "1px solid #1e1e35" }}
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-xl">🖼️</span>
+              <p className="text-white font-bold">Thumbnail Text</p>
+              <span
+                className="ml-auto text-xs px-2 py-0.5 rounded-md font-medium"
+                style={{ background: "rgba(16,185,129,0.15)", color: "#34d399" }}
+              >
+                ×20
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-2 mb-3">
+              {exampleThumbnails.map((text) => (
+                <div
+                  key={text}
+                  className="rounded-xl py-3 px-2 text-center font-extrabold text-sm tracking-wide"
+                  style={{
+                    background: "rgba(16,185,129,0.05)",
+                    border: "1px solid rgba(16,185,129,0.15)",
+                    color: "#e5e7eb",
+                  }}
+                >
+                  {text}
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-gray-600 text-xs">+ 16 more thumbnail texts generated</p>
+            <div
+              className="mt-4 rounded-xl p-3 text-xs text-gray-500 leading-relaxed"
+              style={{ background: "rgba(255,255,255,0.03)", border: "1px solid #1e1e35" }}
+            >
+              Thumbnail texts are 2-5 word overlays designed to work at thumbnail size — bold, emotional, impossible to ignore.
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center mt-10">
+          <Link
+            href="/generator"
+            className="btn-primary text-white font-bold px-8 py-4 rounded-xl text-lg relative z-10 inline-block"
+          >
+            Try the Free Generator →
+          </Link>
+          <p className="text-gray-600 text-sm mt-3">No account needed · Works instantly</p>
         </div>
       </section>
 
@@ -406,18 +442,22 @@ export default function LandingPage() {
         <div className="orb w-96 h-96 -top-32 left-1/2 -translate-x-1/2 opacity-20" style={{ background: "#7c3aed" }} />
         <div className="relative max-w-4xl mx-auto px-6 py-20 text-center">
           <div className="badge inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium mb-4">
-            Simple Pricing
+            Pricing
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ letterSpacing: "-0.03em" }}>
-            Start Free. Go Pro When{" "}
-            <span className="gradient-text">You're Ready</span>
+            Free to start.{" "}
+            <span className="gradient-text">฿199/month</span>{" "}
+            to go unlimited.
           </h2>
-          <p className="text-gray-400 text-lg mb-8">
-            Pro plan at <strong className="text-white">฿199/month</strong>. Cancel anytime. 7-day money-back guarantee.
+          <p className="text-gray-400 text-lg mb-3">
+            The free generator works right now — no signup, no API key, no catch.
+          </p>
+          <p className="text-gray-500 text-sm mb-8">
+            Pro unlocks AI-powered generation (Claude) for fully custom, non-template results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generator" className="btn-primary text-white font-bold px-8 py-4 rounded-xl text-lg relative z-10">
-              Start for Free
+              Try the Free Generator
             </Link>
             <Link
               href="/pricing"
@@ -436,7 +476,7 @@ export default function LandingPage() {
             FAQ
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ letterSpacing: "-0.03em" }}>
-            Frequently Asked{" "}
+            Common{" "}
             <span className="gradient-text">Questions</span>
           </h2>
         </div>
@@ -444,7 +484,7 @@ export default function LandingPage() {
           {faqs.map((faq, i) => (
             <details
               key={i}
-              className="card-dark rounded-xl overflow-hidden group"
+              className="card-dark rounded-xl overflow-hidden"
               style={{ cursor: "pointer" }}
             >
               <summary
@@ -453,7 +493,7 @@ export default function LandingPage() {
               >
                 <span className="text-white font-semibold pr-4">{faq.q}</span>
                 <svg
-                  className="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform group-open:rotate-45"
+                  className="w-5 h-5 text-gray-500 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -475,30 +515,30 @@ export default function LandingPage() {
         <div
           className="relative overflow-hidden rounded-3xl p-12 md:p-20 text-center"
           style={{
-            background: "linear-gradient(135deg, rgba(124,58,237,0.25) 0%, rgba(59,130,246,0.15) 100%)",
-            border: "1px solid rgba(139,92,246,0.3)",
+            background: "linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(59,130,246,0.12) 100%)",
+            border: "1px solid rgba(139,92,246,0.25)",
           }}
         >
-          <div className="orb w-64 h-64 -top-16 -left-16 opacity-40" style={{ background: "#7c3aed" }} />
-          <div className="orb w-48 h-48 -bottom-12 -right-12 opacity-30" style={{ background: "#3b82f6" }} />
+          <div className="orb w-64 h-64 -top-16 -left-16 opacity-30" style={{ background: "#7c3aed" }} />
+          <div className="orb w-48 h-48 -bottom-12 -right-12 opacity-20" style={{ background: "#3b82f6" }} />
           <div className="relative">
             <h2
-              className="text-4xl md:text-6xl font-extrabold text-white mb-6"
+              className="text-4xl md:text-6xl font-extrabold text-white mb-4"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Ready to Create{" "}
-              <span className="gradient-text">Viral Content?</span>
+              Stop staring at a{" "}
+              <span className="gradient-text">blank page.</span>
             </h2>
-            <p className="text-gray-300 text-xl mb-10 max-w-xl mx-auto">
-              Join 50,000+ creators who never run out of ideas. Start free — no credit card required.
+            <p className="text-gray-300 text-xl mb-4 max-w-xl mx-auto">
+              Type your topic. Get 60 video ideas in seconds.
             </p>
+            <p className="text-gray-500 text-sm mb-10">No account required. Works right now.</p>
             <Link
               href="/generator"
-              className="btn-primary text-white font-bold px-10 py-5 rounded-xl text-xl relative z-10 inline-block animate-pulse-glow"
+              className="btn-primary text-white font-bold px-10 py-5 rounded-xl text-xl relative z-10 inline-block"
             >
-              Generate Your First 20 Hooks →
+              Try the Free Generator →
             </Link>
-            <p className="text-gray-500 text-sm mt-5">Free plan available · No credit card needed</p>
           </div>
         </div>
       </section>
